@@ -1,6 +1,5 @@
 from gpiozero import Servo
 from time import sleep
-from gpiozero.pins.pigpio import PiGPIOFactory
 
 servo = Servo(17)
 
