@@ -1,16 +1,14 @@
 from gpiozero import Servo
 from time import sleep
+from gpiozero.pins.pigpio import PiGPIOFactory
 
-servo = Servo(4)
+servo = Servo(17)
 
-try:
-	while True:
-		servo.min()
-		sleep(0.5)
-		servo.mid()
-		sleep(0.5)
-		servo.max()
-		sleep(0.5)
-		break
-except KeyboardInterrupt:
-	print("Program stopped")
+while True:
+    print("SUP")
+    servo.min()
+    sleep(1)
+    servo.mid()
+    sleep(1)
+    servo.max()
+    sleep(1)
