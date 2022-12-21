@@ -15,6 +15,7 @@ while True:
     else:
         print("MOVING MIN")
         servo.min()
+    pir.wait_for_no_motion()
     # if pir.motion_detected:
     #     print("oh yea")
 
