@@ -6,6 +6,11 @@ print("START")
 pir.wait_for_motion()
 print("Motion detected!")
 
+while True:
+    if pir.motion_detected():
+        print("oh yea")
+
+    time.sleep(.25)
 
 
 # import RPi.GPIO as GPIO
