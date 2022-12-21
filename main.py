@@ -1,7 +1,7 @@
 import time
 from gpiozero import OutputDevice, MotionSensor, LightSensor
 
-pir = MotionSensor(13)
+pir = MotionSensor(13, threshold=.5)
 print("START")
 # pir.wait_for_motion()
 print("Motion detected!")
