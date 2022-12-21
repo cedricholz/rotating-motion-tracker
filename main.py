@@ -1,7 +1,7 @@
 import time
 from gpiozero import OutputDevice, MotionSensor, LightSensor, Servo
 
-pir = MotionSensor(13, threshold=1)
+pir = MotionSensor(13, threshold=.8)
 servo = Servo(12)
 
 print("START")
