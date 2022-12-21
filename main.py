@@ -3,11 +3,12 @@ from gpiozero import OutputDevice, MotionSensor, LightSensor
 
 pir = MotionSensor(13)
 print("START")
-pir.wait_for_motion()
+# pir.wait_for_motion()
 print("Motion detected!")
 
 while True:
-    if pir.motion_detected():
+    print("LOOP DE LOOP")
+    if pir.motion_detected:
         print("oh yea")
 
     time.sleep(.25)
