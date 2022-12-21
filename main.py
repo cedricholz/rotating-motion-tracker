@@ -7,7 +7,6 @@ print("START")
 print("Motion detected!")
 
 while True:
-    print("LOOP DE LOOP")
     if pir.motion_detected:
         print("oh yea")
 
