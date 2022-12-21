@@ -1,15 +1,22 @@
 import time
-from gpiozero import OutputDevice, MotionSensor, LightSensor
+from gpiozero import OutputDevice, MotionSensor, LightSensor, Servo
 
 pir = MotionSensor(13, threshold=1)
+servo = Servo(12)
+
 print("START")
 # pir.wait_for_motion()
-
+i = 0
 while True:
-    if pir.motion_detected:
-        print("oh yea")
+    pir.wait_for_motion()
+    if i % 2 == 0:
+        servo.max()
+    else:
+        servo.min()
+    # if pir.motion_detected:
+    #     print("oh yea")
 
-    time.sleep(.25)
+    # time.sleep(.25)
 
 
 # import RPi.GPIO as GPIO
