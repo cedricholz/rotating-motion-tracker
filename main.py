@@ -3,7 +3,7 @@ import time
 import RPi.GPIO as GPIO
 
 GPIO.setmode(GPIO.BOARD)  # Set GPIO to pin numbering
-pir = 13  # Assign pin 8 to PIR
+pir = 14  # Assign pin 8 to PIR
 # led = 10  # Assign pin 10 to LED
 GPIO.setup(pir, GPIO.IN)  # Setup GPIO pin PIR as input
 # GPIO.setup(led, GPIO.OUT)  # Setup GPIO pin for LED as output
