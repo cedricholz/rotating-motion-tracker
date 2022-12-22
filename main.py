@@ -19,7 +19,7 @@ def map(value, fromLow, fromHigh, toLow, toHigh):  # map a value from one range 
 
 def setup():
     global p
-    GPIO.setmode(GPIO.BOARD)  # use PHYSICAL GPIO Numbering
+    # GPIO.setmode(GPIO.BOARD)  # use PHYSICAL GPIO Numbering
     GPIO.setup(servoPin, GPIO.OUT)  # Set servoPin to OUTPUT mode
     GPIO.output(servoPin, GPIO.LOW)  # Make servoPin output LOW level
 
