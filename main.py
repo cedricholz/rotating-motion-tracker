@@ -9,12 +9,12 @@ print("START")
 i = 0
 while True:
     pir.wait_for_motion()
-    if i % 2 == 0:
-        print("MOVING MAX")
-        servo.max()
-    else:
-        print("MOVING MIN")
-        servo.min()
+    # if i % 2 == 0:
+    #     print("MOVING MAX")
+    #     servo.value = .5
+    # else:
+    #     print("MOVING MIN")
+    #     servo.value = 0
     pir.wait_for_no_motion()
     i += 1
     # if pir.motion_detected:
