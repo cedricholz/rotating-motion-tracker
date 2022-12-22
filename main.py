@@ -8,6 +8,7 @@ print("START")
 # pir.wait_for_motion()
 i = 0
 while True:
+    print("SUP")
     pir.wait_for_motion()
     # if i % 2 == 0:
     #     print("MOVING MAX")
