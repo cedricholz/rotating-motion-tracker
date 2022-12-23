@@ -17,6 +17,7 @@ p.start(0)  # Set initial Duty Cycle to 0
 
 
 def setAngle(angle):
+    print("SET LOCAL")
     duty = float(angle) / 10 + 2.5
     p.ChangeDutyCycle(duty)
     time.sleep(0.015)
@@ -24,7 +25,6 @@ def setAngle(angle):
 
 i = 0
 while True:
-    print("SUP")
     if i % 2 == 0:
         setAngle(0)
     else:
