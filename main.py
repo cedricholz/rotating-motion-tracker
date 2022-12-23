@@ -1,29 +1,37 @@
 import RPi.GPIO as GPIO
 import time
 
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(12, GPIO.OUT)
-p = GPIO.PWM(12, 50)
-p.start(2.1)
-time.sleep(1)
+from gpiozero import Servo
 
-for angle in range(2, 180):
-    duty = float(angle) / 18 + 2
-    print(duty)
+servo = Servo(12)
+servo.max()
 
-    p.ChangeDutyCycle(duty)
-    time.sleep(0.015)
+time.sleep(5)
+servo.min()
 
-for angle in range(180, 2, -1):
-    duty = float(angle) / 18 + 2
-    print(duty)
-
-    p.ChangeDutyCycle(duty)
-    time.sleep(0.015)
-
-time.sleep(3)
-
-GPIO.cleanup()
+# GPIO.setmode(GPIO.BCM)
+# GPIO.setup(12, GPIO.OUT)
+# p = GPIO.PWM(12, 50)
+# p.start(2.1)
+# time.sleep(1)
+#
+# for angle in range(2, 180):
+#     duty = float(angle) / 18 + 2
+#     print(duty)
+#
+#     p.ChangeDutyCycle(duty)
+#     time.sleep(0.015)
+#
+# for angle in range(180, 2, -1):
+#     duty = float(angle) / 18 + 2
+#     print(duty)
+#
+#     p.ChangeDutyCycle(duty)
+#     time.sleep(0.015)
+#
+# time.sleep(3)
+#
+# GPIO.cleanup()
 
 # import time
 #
