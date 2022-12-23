@@ -1,38 +1,65 @@
+import RPi.GPIO as GPIO
 import time
 
-import RPi.GPIO as GPIO
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(18, GPIO.OUT)
+p = GPIO.PWM(18, 50)
+p.start(2.1)
+time.sleep(1)
 
-GPIO.setmode(GPIO.BOARD)
+for angle in range(2, 180):
+    duty = float(angle) / 18 + 2
+    print(duty)
 
-servoPin = 12
-
-GPIO.setup(servoPin, GPIO.OUT)  # Set servoPin to OUTPUT mode
-GPIO.output(servoPin, GPIO.LOW)  # Make servoPin output LOW level
-
-p = GPIO.PWM(servoPin, 50)
-# p = GPIO.PWM(servoPin, 50)  # set Frequece to 50Hz
-p.start(0)  # Set initial Duty Cycle to 0
-
-
-def setAngle(angle):
-    print("SET LOCAL")
-    duty = float(angle) / 10 + 2.5
     p.ChangeDutyCycle(duty)
     time.sleep(0.015)
 
+for angle in range(180, 2, -1):
+    duty = float(angle) / 18 + 2
+    print(duty)
 
-i = 0
-while True:
-    if i % 2 == 0:
-        setAngle(0)
-    else:
-        setAngle(45)
-    time.sleep(5)
-    i += 1
+    p.ChangeDutyCycle(duty)
+    time.sleep(0.015)
 
+time.sleep(3)
 
 GPIO.cleanup()
-c.close()
+
+# import time
+#
+# import RPi.GPIO as GPIO
+#
+# GPIO.setmode(GPIO.BOARD)
+#
+# servoPin = 12
+#
+# GPIO.setup(servoPin, GPIO.OUT)  # Set servoPin to OUTPUT mode
+# GPIO.output(servoPin, GPIO.LOW)  # Make servoPin output LOW level
+#
+# p = GPIO.PWM(servoPin, 50)
+# # p = GPIO.PWM(servoPin, 50)  # set Frequece to 50Hz
+# p.start(0)  # Set initial Duty Cycle to 0
+#
+#
+# def setAngle(angle):
+#     print("SET LOCAL")
+#     duty = float(angle) / 10 + 2.5
+#     p.ChangeDutyCycle(duty)
+#     time.sleep(0.015)
+
+
+# i = 0
+# while True:
+#     if i % 2 == 0:
+#         setAngle(0)
+#     else:
+#         setAngle(45)
+#     time.sleep(5)
+#     i += 1
+#
+#
+# GPIO.cleanup()
+# c.close()
 #
 # GPIO.setwarnings(False)
 #
