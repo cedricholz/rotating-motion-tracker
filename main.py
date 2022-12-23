@@ -4,9 +4,11 @@ import time
 from gpiozero import Servo
 
 servo = Servo(12)
+print("MAX")
 servo.max()
 
 time.sleep(5)
+print("MIN")
 servo.min()
 
 # GPIO.setmode(GPIO.BCM)
