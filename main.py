@@ -3,7 +3,7 @@ import time
 
 from gpiozero import Servo
 
-servo = Servo(13)
+servo = Servo(6)
 print("MAX")
 servo.max()
 
