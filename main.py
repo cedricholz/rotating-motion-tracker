@@ -6,7 +6,7 @@ from gpiozero import Servo
 servo = Servo(6)
 print("MAX")
 servo.value = .5
-print(x)
+# print(x)
 
 time.sleep(5)
 print("MIN")
