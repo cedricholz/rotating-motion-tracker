@@ -1,23 +1,21 @@
 import time
-from gpiozero import OutputDevice, MotionSensor, LightSensor, Servo
-import RPi.GPIO as GPIO
-import time
 
 import RPi.GPIO as GPIO
-import time
 
 servoPin = 12
 
 p = GPIO.PWM(servoPin, 100)
+
 
 def setAngle(angle):
     duty = float(angle) / 10 + 2.5
     p.ChangeDutyCycle(duty)
     time.sleep(0.015)
 
+
 i = 0
 while True:
-    if i %2 == 0:
+    if i % 2 == 0:
         setAngle(0)
     else:
         setAngle(45)
@@ -25,8 +23,8 @@ while True:
     i += 1
 
 
-
-
+GPIO.cleanup()
+c.close()
 #
 # GPIO.setwarnings(False)
 #
