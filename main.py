@@ -24,6 +24,7 @@ def setAngle(angle):
 
 i = 0
 while True:
+    print("SUP")
     if i % 2 == 0:
         setAngle(0)
     else:
