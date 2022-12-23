@@ -2,6 +2,8 @@ import time
 
 import RPi.GPIO as GPIO
 
+GPIO.setmode(GPIO.BOARD)
+
 servoPin = 12
 
 p = GPIO.PWM(servoPin, 100)
