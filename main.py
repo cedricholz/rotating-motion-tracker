@@ -5,11 +5,12 @@ from gpiozero import Servo
 
 servo = Servo(6)
 print("MAX")
-servo.max()
+servo.value = .5
+print(x)
 
 time.sleep(5)
 print("MIN")
-servo.min()
+servo.value = .1
 
 # GPIO.setmode(GPIO.BCM)
 # GPIO.setup(12, GPIO.OUT)
