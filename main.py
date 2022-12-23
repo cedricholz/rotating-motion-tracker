@@ -6,12 +6,10 @@ GPIO.setmode(GPIO.BOARD)
 
 servoPin = 12
 
-
-
 GPIO.setup(servoPin, GPIO.OUT)  # Set servoPin to OUTPUT mode
 GPIO.output(servoPin, GPIO.LOW)  # Make servoPin output LOW level
 
-p = GPIO.PWM(servoPin, 100)
+p = GPIO.PWM(servoPin, 50)
 # p = GPIO.PWM(servoPin, 50)  # set Frequece to 50Hz
 p.start(0)  # Set initial Duty Cycle to 0
 
